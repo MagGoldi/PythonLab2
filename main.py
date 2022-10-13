@@ -1,9 +1,4 @@
-from utils import run_1, run_2, run_3, run_4, run_5
-
+from scrnipt_1 import run_1
 
 if __name__ == '__main__':
     run_1()
-    run_2()
-    run_3()
-    run_4() 
-    run_5()
