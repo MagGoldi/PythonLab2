@@ -8,7 +8,7 @@ def work_file(path_to_csv=os.path.join("File_folder", "dataset.csv")):
     for day in range(day, 32):
         date_f = str(datetime.date(year, mounth, day)) #2022-
         data_f = "data" + str(day-13)
-        file_main.write(date_f + ";" + data_f)
+        file_main.write(date_f + "," + data_f)
         file_main.write("\n")
 
 def make_dir():
