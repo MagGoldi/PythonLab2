@@ -15,6 +15,9 @@ def make_dir():
     if not os.path.isdir("File_folder"):
         os.mkdir("File_folder")
 
+def split_file(path_to_csv=os.path.join("File_folder", "dataset.csv")):
+    pass
+
 def run_1(path_to_csv=os.path.join("File_folder", "dataset.csv")):
     make_dir()
     file_main = open(path_to_csv, "w", encoding="utf-8")
