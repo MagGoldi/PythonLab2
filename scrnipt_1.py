@@ -4,9 +4,11 @@ import datetime
 
 def work_file(path_to_csv=os.path.join("File_folder", "dataset.csv")):
     file_main = open(path_to_csv, "a", encoding="utf-8")
-    today = str(datetime.date.today())
-    file_main.write(today)
-    file_main.write("\n")
+    year, mounth, day = 2022, 10, 14
+    for day in range(day, 32):
+        date_f = str(datetime.date(year, mounth, day))
+        file_main.write(date_f)
+        file_main.write("\n")
 
 def make_dir():
     if not os.path.isdir("File_folder"):
