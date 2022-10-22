@@ -6,7 +6,8 @@ def make_dir():
     if not os.path.isdir("File_folder"):
         os.mkdir("File_folder")
     if not os.path.isdir("File_folder/scrnipt_1"):
-        os.mkdir("File_folder/scrnipt_1")   
+        os.mkdir("File_folder/scrnipt_1")
+
 
 def run_1():
     make_dir()
@@ -30,4 +31,4 @@ def run_1():
 
     csvfile_x.close()
     csvfile_y.close()
-    csvfile.close()        
+    csvfile.close()
