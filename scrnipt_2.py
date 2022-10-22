@@ -13,13 +13,12 @@ def make_dir():
         os.mkdir("File_folder/scrnipt_2")
 
 def work_file(date_1, date_2, list1_years):
-    name_file = 'File_folder/' + date_1 + "_" + date_2 + ".csv"
+    name_file = 'File_folder/scrnipt_2/' + date_1 + "_" + date_2 + ".csv"
     print(name_file)
     with open(name_file, 'w', newline='') as namefile:
         writer = csv.writer(namefile)
         for i in range(len(list1_years)):
             writer.writerow(list1_years[i])
-            writer.writerow("\n")
         
 
 
@@ -31,14 +30,15 @@ def run_2():
         file_reader = csv.reader(csvfile)
         for row in file_reader:
             set1.add(row[0][:4])
-    set1 = sorted(list(set1), reverse=True)       
+    set1 = sorted(list(set1), reverse=True) 
+    n = len(set1)      
 
     with open('File_folder/dataset.csv', 'r', newline='') as csvfile:
-        file_reader = csv.reader(csvfile)  
-        for i in range(len(set1)):
-            for row in file_reader:
-                if(row[0][:4] == set1[i]):
-                    list1_years.append(row)            
+        file_reader = list(csv.reader(csvfile)) 
+        for i in range(n):
+            for j in range(len(file_reader)):
+                if(file_reader[j][0][:4] == set1[i]): list1_years.append(file_reader[j])
+            print(list1_years[0][0])              
             date_1 = str(re.sub(r'[-]', '', list1_years[0][0]))
             date_2 = str(re.sub(r'[-]', '', list1_years[-1][0]))
             work_file(date_1, date_2, list1_years)
