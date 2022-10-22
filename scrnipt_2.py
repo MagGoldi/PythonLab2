@@ -5,9 +5,4 @@ import datetime
 # Файлы называются по первой и последней дате, которую они содержат. 
 # (если файл содержит данные с первого января 2001 по 31 декабря 2001, то файл назвать 20010101_20011231.csv)
 
-today = str(datetime.date.today())
-print(today)
-yesterday = datetime.date(2022, 10, 13)
-print(yesterday)
-year, mounth, day = 2022, 10, 14
-print(datetime.toordinal())
+def run_2():

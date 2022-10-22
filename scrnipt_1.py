@@ -16,7 +16,6 @@ def run_1():
         file_reader = csv.reader(csvfile)
         for row in file_reader:
             list1.append(row)
-        print(list1)
 
     for i in range(0, len(list1)):
         with open("File_folder/scrnipt_1/X.csv", "a", newline="") as csvfile_x:
