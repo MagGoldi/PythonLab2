@@ -46,8 +46,6 @@ def work_1(date):
     csvfile.close()    
                
         
-
-
 def work_2(date):
         ways = os.listdir(path="File_folder/scrnipt_2")
         for i in range(len(ways)):
@@ -62,6 +60,7 @@ def work_2(date):
         else:
             csvfile.close() 
             return None        
+
 
 def work_3(date):
     ways = os.listdir(path="File_folder/scrnipt_3")
@@ -86,8 +85,6 @@ def work_3(date):
         return None    
 
     
-
-
 def run_4():
     print("Введите дату в формате datetime (2000-01-01): ", end="")
     date = input()
@@ -119,8 +116,6 @@ def run_4():
         while(num != count):
             file_reader = next(file_reader)
             count+=1
-
-
 
     csvfile.close()                       
     
