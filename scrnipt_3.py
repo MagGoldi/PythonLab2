@@ -33,7 +33,6 @@ def sort_week(all_data):
 
 
 def work_file(week):
-    print(week[0][0][8:10])
     date_1 = week[0][0][8:10]
     date_2 = week[-1][0][8:10]
     name_file = 'File_folder/scrnipt_3/' + str(week[0][0][:4]) + "_" + str(
@@ -58,16 +57,22 @@ def run_3():
     with open('File_folder/dataset.csv', 'r', newline='') as csvfile:
         file_reader = list(csv.reader(csvfile))
         all_data = []
-        month = 9
-        for row in file_reader:
-            if (int(row[0][5:7]) == month):
-                all_data.append(row)
-            elif (int(row[0][5:7]) < month):
-                month -= 1
-                if (month == 0): month = 12
-                sort_week(all_data)
-                all_data = []
-                all_data.append(row)
+        month, year = 9, 2022
+        while(year != 2009):
+            for row in file_reader:
+                if (int(row[0][5:7]) == month):
+                    all_data.append(row)
+                elif (int(row[0][5:7]) > month):
+                    month = int(row[0][5:7])
+                    year -=1
+                elif (int(row[0][5:7]) < month):
+                    print(month, year)
+                    month -= 1
+                    if(month == 1):
+                        pass
+                    sort_week(all_data)
+                    all_data = []
+                    all_data.append(row)
     csvfile.close()
 
 
