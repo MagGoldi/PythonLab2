@@ -16,7 +16,7 @@ def make_dir():
 def work_file(date_1, date_2, list1_years):
     name_file = 'File_folder/scrnipt_2/' + date_1 + "_" + date_2 + ".csv"
     print("create file: ", name_file)
-    with open(name_file, 'w', newline='', encoding = "utf-8") as namefile:
+    with open(name_file, 'w', newline='', encoding="utf-8") as namefile:
         writer = csv.writer(namefile)
         for i in range(len(list1_years)):
             writer.writerow(list1_years[i])
@@ -26,14 +26,14 @@ def run_2():
     make_dir()
     set1 = set()
     list1_years = []
-    with open('File_folder/dataset.csv', 'r', newline='', encoding = "utf-8") as csvfile:
+    with open('File_folder/dataset.csv', 'r', newline='', encoding="utf-8") as csvfile:
         file_reader = csv.reader(csvfile)
         for row in file_reader:
             set1.add(row[0][:4])
     set1 = sorted(list(set1), reverse=True)
     n = len(set1)
 
-    with open('File_folder/dataset.csv', 'r', newline='', encoding = "utf-8") as csvfile:
+    with open('File_folder/dataset.csv', 'r', newline='', encoding="utf-8") as csvfile:
         file_reader = list(csv.reader(csvfile))
         for i in range(n):
             for j in range(len(file_reader)):

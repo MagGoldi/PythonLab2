@@ -2,7 +2,6 @@ import csv
 import os
 
 
-
 # Написать скрипт, который разобъёт исходный csv файл на N файлов, 
 # где каждый отдельный файл будет соответствовать одной неделе. 
 # Файлы называются по первой и последней дате, которую они содержат.
@@ -38,7 +37,7 @@ def work_file(week):
     name_file = 'File_folder/scrnipt_3/' + str(week[0][0][:4]) + "_" + str(
         week[0][0][5:7]) + "_" + date_1 + "_" + date_2 + ".csv"
     print(name_file)
-    with open(name_file, 'w', newline='', encoding = "utf-8") as file_scr3:
+    with open(name_file, 'w', newline='', encoding="utf-8") as file_scr3:
         writer = csv.writer(file_scr3)
         for i in range(len(week)):
             writer.writerow(week[i])
@@ -47,28 +46,28 @@ def work_file(week):
 def run_3():
     make_dir()
     set1 = set()
-    with open('File_folder/dataset.csv', 'r', newline='', encoding = "utf-8") as csvfile:
+    with open('File_folder/dataset.csv', 'r', newline='', encoding="utf-8") as csvfile:
         file_reader = csv.reader(csvfile)
         for row in file_reader:
             set1.add(row[0][:4])
     set1 = sorted(list(set1), reverse=True)
     n = len(set1)
 
-    with open('File_folder/dataset.csv', 'r', newline='', encoding = "utf-8") as csvfile:
+    with open('File_folder/dataset.csv', 'r', newline='', encoding="utf-8") as csvfile:
         file_reader = list(csv.reader(csvfile))
         all_data = []
         month, year = 9, 2022
-        while(year != 2009):
+        while (year != 2009):
             for row in file_reader:
                 if (int(row[0][5:7]) == month):
                     all_data.append(row)
                 elif (int(row[0][5:7]) > month):
                     month = int(row[0][5:7])
-                    year -=1
+                    year -= 1
                 elif (int(row[0][5:7]) < month):
                     print(month, year)
                     month -= 1
-                    if(month == 1):
+                    if (month == 1):
                         pass
                     sort_week(all_data)
                     all_data = []
