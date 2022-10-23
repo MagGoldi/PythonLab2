@@ -24,3 +24,4 @@ def run_5():
     s_iter1 = Iterator(file_name)
     for val in s_iter1:
         print(val, end="")
+    print("\nscript_5 has finished working\n")    

@@ -74,6 +74,7 @@ def run_3():
                     all_data = []
                     all_data.append(row)
     csvfile.close()
+    print("\nscript_3 has finished working\n")
 
 
   

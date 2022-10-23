@@ -27,7 +27,8 @@ def run_1():
             all_data = list1[i][1:]
             writer = csv.writer(csvfile_y)
             writer.writerow(all_data)
-
+    
     csvfile_x.close()
     csvfile_y.close()
     csvfile.close()
+    print("\nscript_1 has finished working\n")

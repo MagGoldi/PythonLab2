@@ -15,7 +15,7 @@ def make_dir():
 
 def work_file(date_1, date_2, list1_years):
     name_file = 'File_folder/scrnipt_2/' + date_1 + "_" + date_2 + ".csv"
-    print(name_file)
+    print("create file: ", name_file)
     with open(name_file, 'w', newline='', encoding = "utf-8") as namefile:
         writer = csv.writer(namefile)
         for i in range(len(list1_years)):
@@ -45,3 +45,4 @@ def run_2():
             list1_years = []
 
     csvfile.close()
+    print("\nscript_2 has finished working\n")

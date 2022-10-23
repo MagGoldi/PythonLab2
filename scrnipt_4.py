@@ -117,5 +117,6 @@ def run_4():
             file_reader = next(file_reader)
             count+=1
 
-    csvfile.close()                       
+    csvfile.close()
+    print("\nscript_4 has finished working\n")                       
     
