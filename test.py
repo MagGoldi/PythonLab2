@@ -1,3 +1,11 @@
-import os
+def next(count):
+    file = open("dataset.csv", "r")
+    data = []
+    for row in file:
+        data.append(row)
+    print(data[count])
+    file.close
+    count+=1
+    return count
 
-print(os.listdir(path="C:\PYTHON\PythonLab2\PythonLab2-1\File_folder\scrnipt_2"))
+next(6)    

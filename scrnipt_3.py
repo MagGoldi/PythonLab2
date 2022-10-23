@@ -38,7 +38,7 @@ def work_file(week):
     name_file = 'File_folder/scrnipt_3/' + str(week[0][0][:4]) + "_" + str(
         week[0][0][5:7]) + "_" + date_1 + "_" + date_2 + ".csv"
     print(name_file)
-    with open(name_file, 'w', newline='') as file_scr3:
+    with open(name_file, 'w', newline='', encoding = "utf-8") as file_scr3:
         writer = csv.writer(file_scr3)
         for i in range(len(week)):
             writer.writerow(week[i])
@@ -47,14 +47,14 @@ def work_file(week):
 def run_3():
     make_dir()
     set1 = set()
-    with open('File_folder/dataset.csv', 'r', newline='') as csvfile:
+    with open('File_folder/dataset.csv', 'r', newline='', encoding = "utf-8") as csvfile:
         file_reader = csv.reader(csvfile)
         for row in file_reader:
             set1.add(row[0][:4])
     set1 = sorted(list(set1), reverse=True)
     n = len(set1)
 
-    with open('File_folder/dataset.csv', 'r', newline='') as csvfile:
+    with open('File_folder/dataset.csv', 'r', newline='', encoding = "utf-8") as csvfile:
         file_reader = list(csv.reader(csvfile))
         all_data = []
         month, year = 9, 2022
