@@ -21,18 +21,18 @@ def work_file(date_1, date_2, list1_years):
             writer.writerow(list1_years[i])
 
 
-def run_2():
+def run_2(path_to_csv=os.path.join("C:/","PYTHON", "PythonLab2-1", "File_folder")):
     make_dir()
     set1 = set()
     list1_years = []
-    with open('File_folder/dataset.csv', 'r', newline='', encoding="utf-8") as csvfile:
+    with open(path_to_csv+'dataset.csv', 'r', newline='', encoding="utf-8") as csvfile:
         file_reader = csv.reader(csvfile)
         for row in file_reader:
             set1.add(row[0][:4])
     set1 = sorted(list(set1), reverse=True)
     n = len(set1)
 
-    with open('File_folder/dataset.csv', 'r', newline='', encoding="utf-8") as csvfile:
+    with open(path_to_csv+'dataset.csv', 'r', newline='', encoding="utf-8") as csvfile:
         file_reader = list(csv.reader(csvfile))
         for i in range(n):
             for j in range(len(file_reader)):
