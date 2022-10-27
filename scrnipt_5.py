@@ -1,3 +1,6 @@
+import os
+
+
 class Iterator:
 
     def __init__(self, name_of_file):
@@ -21,8 +24,8 @@ class Iterator:
             raise StopIteration
 
 
-def run_5():
-    file_name = "File_folder/scrnipt_2/20220901_20220130.csv"
+def run_5(path_to_csv=os.path.join("C:/","PYTHON", "PythonLab2-1", "File_folder")):
+    file_name = path_to_csv+"/scrnipt_2/20220901_20220130.csv"
     s_iter1 = Iterator(file_name)
     for val in s_iter1:
         print(val, end="")
