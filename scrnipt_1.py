@@ -9,10 +9,10 @@ def make_dir():
         os.mkdir("File_folder/scrnipt_1")
 
 
-def run_1():
+def run_1(path_to_csv=os.path.join("PYTHON", "File_folder", "dataset.csv" )):
     make_dir()
     list1 = []
-    with open('File_folder/dataset.csv', 'r', newline='') as csvfile:
+    with open(path_to_csv, 'r', newline='') as csvfile:
         file_reader = csv.reader(csvfile)
         for row in file_reader:
             list1.append(row)
