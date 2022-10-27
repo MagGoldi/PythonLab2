@@ -1,7 +1,7 @@
 import os
 import csv
 import re
-
+import datetime
 
 # Написать скрипт, содержащий функцию, 
 # принимающую на вход дату (тип datetime) и возвращающий данные для этой даты (из файла) или 
@@ -14,11 +14,12 @@ import re
 # то она игнориуруется и возвращаются данные для следующей валидной даты.
 
 
-def next(list_f):
-    print(tuple(list_f[-1]))
-    del list_f[-1]
-    return list_f
 
+def next(count):
+    with open('File_folder/dataset.csv', 'r', newline='', encoding="utf-8") as csvfile:
+        file_reader = list(csv.reader(csvfile))
+        if(file_reader[count] == None): return None
+        else:print(file_reader[count])
 
 def work_0(date):
     with open('File_folder/dataset.csv', 'r', newline='', encoding="utf-8") as csvfile:
@@ -90,35 +91,17 @@ def work_3(date):
 
 
 def run_4():
-    print("Введите дату в формате datetime (2000-01-01): ", end="")
-    date = input()
-    print("\nВыберите скрипт с файлами которого работать: ", end="")
-    print('''
-            script_0 - 0
-            script_1 - 1
-            script_2 - 2
-            script_3 - 3''')
-    scr = int(input())
+    date = datetime.date(2022, 12, 22)
+    #work_0(date)
+    #work_1(date)
+    #work_2(date)
+    #work_3(date)
 
-    if (scr == 0):
-        work_0(date)
-
-    elif (scr == 1):
-        work_1(date)
-
-    elif (scr == 2):
-        work_2(date)
-
-    elif (scr == 3):
-        work_3(date)
 
     with open('File_folder/dataset.csv', 'r', newline='', encoding="utf-8") as csvfile:
-        print("Сколько раз запустить функцию next()?")
-        num = int(input())
         count = 0
-        file_reader = list(csv.reader(csvfile))
-        while (num != count):
-            file_reader = next(file_reader)
+        while(count !=50):
+            next(count)
             count += 1
 
     csvfile.close()

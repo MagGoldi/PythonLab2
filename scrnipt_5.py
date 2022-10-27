@@ -22,7 +22,7 @@ class Iterator:
 
 
 def run_5():
-    file_name = input()
+    file_name = "File_folder/scrnipt_2/20220901_20220130.csv"
     s_iter1 = Iterator(file_name)
     for val in s_iter1:
         print(val, end="")
