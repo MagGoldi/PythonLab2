@@ -6,12 +6,12 @@ import os
 # где каждый отдельный файл будет соответствовать одной неделе. 
 # Файлы называются по первой и последней дате, которую они содержат.
 
-def make_dir():
-    if not os.path.isdir("File_folder/scrnipt_3"):
-        os.mkdir("File_folder/scrnipt_3")
+def make_dir(path_to_csv):
+    if not os.path.isdir(path_to_csv +"/scrnipt_3"):
+        os.mkdir(path_to_csv +"/scrnipt_3")
 
 
-def sort_week(all_data):
+def sort_week(all_data, path_to_csv):
     day = len(all_data)
     week = []
     count = 0
@@ -20,21 +20,21 @@ def sort_week(all_data):
             for i in range(7):
                 week.append(all_data[count])
                 count += 1
-            work_file(week)
+            work_file(week, path_to_csv)
             day -= 7
         elif (day < 7):
             for i in range(day):
                 week.append(all_data[count])
                 count += 1
-            work_file(week)
+            work_file(week, path_to_csv)
             day = 0
         week = []
 
 
-def work_file(week):
+def work_file(week, path_to_csv):
     date_1 = week[0][0][8:10]
     date_2 = week[-1][0][8:10]
-    name_file = 'File_folder/scrnipt_3/' + str(week[0][0][:4]) + "_" + str(
+    name_file = path_to_csv+'/scrnipt_3/' + str(week[0][0][:4]) + "_" + str(
         week[0][0][5:7]) + "_" + date_1 + "_" + date_2 + ".csv"
     print(name_file)
     with open(name_file, 'w', newline='', encoding="utf-8") as file_scr3:
@@ -43,17 +43,17 @@ def work_file(week):
             writer.writerow(week[i])
 
 
-def run_3():
-    make_dir()
+def run_3(path_to_csv=os.path.join("C:/","PYTHON", "PythonLab2-1", "File_folder")):
+    make_dir(path_to_csv)
     set1 = set()
-    with open('File_folder/dataset.csv', 'r', newline='', encoding="utf-8") as csvfile:
+    with open(path_to_csv+'/dataset.csv', 'r', newline='', encoding="utf-8") as csvfile:
         file_reader = csv.reader(csvfile)
         for row in file_reader:
             set1.add(row[0][:4])
     set1 = sorted(list(set1), reverse=True)
     n = len(set1)
 
-    with open('File_folder/dataset.csv', 'r', newline='', encoding="utf-8") as csvfile:
+    with open(path_to_csv+'/dataset.csv', 'r', newline='', encoding="utf-8") as csvfile:
         file_reader = list(csv.reader(csvfile))
         all_data = []
         month, year = 9, 2022
@@ -69,7 +69,7 @@ def run_3():
                     month -= 1
                     if (month == 1):
                         pass
-                    sort_week(all_data)
+                    sort_week(all_data, path_to_csv)
                     all_data = []
                     all_data.append(row)
     csvfile.close()
