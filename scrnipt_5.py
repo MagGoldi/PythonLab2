@@ -1,9 +1,10 @@
+from typing import Self
 import os
 
 
 class Iterator:
 
-    def __init__(self, name_of_file):
+    def __init__(self, name_of_file: str) -> None:
         self.name_of_file = name_of_file
         self.counter = 0
         self.list = []
@@ -12,10 +13,10 @@ class Iterator:
             self.list.append(row)
         file.close
 
-    def __iter__(self):
+    def __iter__(self) -> Self:
         return self
 
-    def __next__(self):
+    def __next__(self) -> int:
         if self.counter < len(self.list):
             tmp = self.list[self.counter]
             self.counter += 1
@@ -24,8 +25,9 @@ class Iterator:
             raise StopIteration
 
 
-def run_5(path_to_csv=os.path.join("C:/","PYTHON", "PythonLab2-1", "File_folder")):
-    file_name = path_to_csv+"/scrnipt_2/20220901_20220130.csv"
+def run_5(path_to_csv: str=os.path.join("C:/", "PYTHON", "PythonLab2-1", "File_folder")) -> None:
+    '''Основная функция работы скрипта'''
+    file_name = path_to_csv + "/scrnipt_2/20220901_20220130.csv"
     s_iter1 = Iterator(file_name)
     for val in s_iter1:
         print(val, end="")
