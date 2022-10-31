@@ -104,7 +104,7 @@ def run_2(path_to_csv: str=os.path.join("C:/", "PYTHON", "PythonLab2-1", "File_f
     
     
     
-    import csv
+import csv
 import os
 
 
