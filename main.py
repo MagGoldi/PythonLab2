@@ -5,8 +5,8 @@ from scrnipt_4 import run_4
 from scrnipt_5 import run_5
 
 if __name__ == '__main__':
-    run_1()
-    #run_2()
+    #run_1()
+    run_2()
     #run_3()
     #run_4()
     #run_5()
