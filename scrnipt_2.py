@@ -24,13 +24,13 @@ def work_file(date_1: str, date_2: str, list1_years: list, path_to_csv: str) -> 
             writer.writerow(list1_years[i])
 
 
-def run_2(path_to_csv: str=os.path.join("C:/", "PYTHON", "PythonLab2-1", "File_folder")) -> None:
+def run_2(path_to_csv: str=os.path.join("C:/", "PYTHON", "PythonLab2", "File_folder")) -> None:
     '''Основная функция работы скрипта'''
     path_sc2 = "File_folder/scrnipt_2"
     make_dir(path_to_csv, path_sc2)
     set1 = set()
     list1_years = []
-    with open(path_to_csv=os.path.join("C:/", "PYTHON", "PythonLab2-1", "File_folder",
+    with open(path_to_csv=os.path.join("C:/", "PYTHON", "PythonLab2", "File_folder",
      'dataset.csv', 'r', newline='', encoding="utf-8")) as csvfile:
         file_reader = csv.reader(csvfile)
         for row in file_reader:
@@ -38,7 +38,7 @@ def run_2(path_to_csv: str=os.path.join("C:/", "PYTHON", "PythonLab2-1", "File_f
     set1 = sorted(list(set1), reverse=True)
     n = len(set1)
 
-    with open(path_to_csv=os.path.join("C:/", "PYTHON", "PythonLab2-1", "File_folder",
+    with open(path_to_csv=os.path.join("C:/", "PYTHON", "PythonLab2", "File_folder",
      'dataset.csv', 'r', newline='', encoding="utf-8")) as csvfile:
         file_reader = list(csv.reader(csvfile))
         for i in range(n):
