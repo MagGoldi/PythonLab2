@@ -28,7 +28,7 @@ def next(count: int) -> Optional[List[str]]: # Union[None, List[int]]
             #print(*file_reader[count])
 
 
-def work_0(date: datetime.dat) -> None:
+def work_0(date: datetime.date) -> None:
     "принимает данные, ищет их в файле соответствующего скрипта"
     with open(path_to_csv=os.path.join("C:/", "PYTHON", "PythonLab2-1", "File_folder",
      'dataset.csv', 'r', newline='', encoding="utf-8")) as csvfile:
@@ -41,7 +41,7 @@ def work_0(date: datetime.dat) -> None:
             return None
 
 
-def work_1(date: datetime.dat) -> None:
+def work_1(date: datetime.date) -> None:
     "принимает данные, ищет их в файле соответствующего скрипта"
     with open(path_to_csv=os.path.join("C:/", "PYTHON", "PythonLab2-1", "File_folder",
     'scrnipt_1', 'X.csv', 'r', newline='', encoding="utf-8")) as csvfile:
