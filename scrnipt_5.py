@@ -7,7 +7,7 @@ class Iterator:
         self.name_of_file = name_of_file
         self.counter = 0
         self.list = []
-        file = open(self.name_of_file, "r", encoding="utf-8")
+        file = open(self.name_of_file, "r", encoding='utf-8')
         for row in file:
             self.list.append(row)
         file.close
