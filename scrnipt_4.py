@@ -18,7 +18,7 @@ from typing import List, Optional
 
 def next(count: int) -> Optional[List[str]]: # Union[None, List[int]]
     '''функция next, принимает count, выводит значение по индексу'''
-    with open(path_to_csv=os.path.join("C:/", "PYTHON", "PythonLab2-1", "File_folder",
+    with open(path_to_csv=os.path.join("C:/", "PYTHON", "PythonLab2", "File_folder",
      'dataset.csv', 'r', newline='', encoding="utf-8")) as csvfile:
         file_reader = list(csv.reader(csvfile))
         if (file_reader[count] == None):
