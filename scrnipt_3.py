@@ -51,14 +51,14 @@ def run_3(path_to_csv: str=os.path.join("C:/", "PYTHON", "PythonLab2", "File_fol
     path_sc3 = "File_folder/scrnipt_3"
     make_dir(path_sc3)
     set1 = set()
-    with open(path_to_csv + '/dataset.csv', 'r', newline='', encoding='utf-8') as csvfile:
+    with open(path_to_csv + '/DataSet/dataset.csv', 'r', newline='', encoding='utf-8') as csvfile:
         file_reader = csv.reader(csvfile)
         for row in file_reader:
             set1.add(row[0][:4])
     set1 = sorted(list(set1), reverse=True)
     n = len(set1)
 
-    with open(path_to_csv + '/dataset.csv', 'r', newline='', encoding='utf-8') as csvfile:
+    with open(path_to_csv + '/DataSet/dataset.csv', 'r', newline='', encoding='utf-8') as csvfile:
         file_reader = list(csv.reader(csvfile))
         all_data = []
         month, year = 9, 2022

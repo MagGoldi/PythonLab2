@@ -18,7 +18,7 @@ from typing import List, Optional
 
 def next(path_to_csv: str, count: int) -> Optional[List[str]]: # Union[None, List[int]]
     '''функция next, принимает count, выводит значение по индексу'''
-    with open(path_to_csv+'/dataset.csv', 'r', encoding='utf-8') as csvfile:
+    with open(path_to_csv+'/DataSet/dataset.csv', 'r', encoding='utf-8') as csvfile:
         file_reader = list(csv.reader(csvfile))
         if (file_reader[count] == None):
             return None
@@ -29,7 +29,7 @@ def next(path_to_csv: str, count: int) -> Optional[List[str]]: # Union[None, Lis
 
 def work_0(date: datetime.date,  path_to_csv: str) -> None:
     "принимает данные, ищет их в файле соответствующего скрипта"
-    with open(path_to_csv+"/dataset.csv", mode='r', encoding='utf-8') as csvfile:
+    with open(path_to_csv+'/DataSet/dataset.csv', mode='r', encoding='utf-8') as csvfile:
         file_reader = csv.reader(csvfile) 
         for row in file_reader:
             if (row[0] == str(date)):  # если одинаковые даты - выводим
@@ -104,7 +104,7 @@ def run_4(path_to_csv: str=os.path.join("C:/", "PYTHON", "PythonLab2", "File_fol
     work_2(date, path_to_csv)
     work_3(date, path_to_csv)
 
-    with open(path_to_csv+'/dataset.csv', 'r', encoding='utf-8') as csvfile:
+    with open(path_to_csv+'/DataSet/dataset.csv', 'r', encoding='utf-8') as csvfile:
         count = 0
         while (count != 50):
             next(path_to_csv, count)

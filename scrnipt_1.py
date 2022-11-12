@@ -12,7 +12,7 @@ def run_1(path_to_csv: str=os.path.join("C:/", "PYTHON", "PythonLab2", "File_fol
     path_fol, path_sc1 = "File_folder", "File_folder/scrnipt_1" 
     make_dir(path_fol, path_sc1) 
     list1 = [] 
-    with open(path_to_csv + '/dataset.csv', 'r', encoding='utf-8') as csvfile:
+    with open(path_to_csv+'/DataSet/dataset.csv', 'r', encoding='utf-8') as csvfile:
         file_reader = csv.reader(csvfile) 
         for row in file_reader: 
             list1.append(row)
