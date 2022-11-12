@@ -40,7 +40,7 @@ def work_file(week: list, path_to_csv: str) -> None:
     name_file = path_to_csv + '/scrnipt_3/' + str(week[0][0][:4]) + "_" + str(
         week[0][0][5:7]) + "_" + date_1 + "_" + date_2 + ".csv"
     print(name_file)
-    with open(name_file, 'w', newline='', encoding="utf-8") as file_scr3:
+    with open(name_file, 'w', newline='', encoding='cp1251') as file_scr3:
         writer = csv.writer(file_scr3)
         for i in range(len(week)):
             writer.writerow(week[i])
@@ -51,16 +51,14 @@ def run_3(path_to_csv: str=os.path.join("C:/", "PYTHON", "PythonLab2", "File_fol
     path_sc3 = "File_folder/scrnipt_3"
     make_dir(path_sc3)
     set1 = set()
-    with open(path_to_csv=os.path.join("C:/", "PYTHON", "PythonLab2", "File_folder",
-     'dataset.csv', 'r', newline='', encoding="utf-8")) as csvfile:
+    with open(path_to_csv + '/dataset.csv', 'r', newline='', encoding='cp1251') as csvfile:
         file_reader = csv.reader(csvfile)
         for row in file_reader:
             set1.add(row[0][:4])
     set1 = sorted(list(set1), reverse=True)
     n = len(set1)
 
-    with open(path_to_csv=os.path.join("C:/", "PYTHON", "PythonLab2", "File_folder",
-     'dataset.csv', 'r', newline='', encoding="utf-8")) as csvfile:
+    with open(path_to_csv + '/dataset.csv', 'r', newline='', encoding='cp1251') as csvfile:
         file_reader = list(csv.reader(csvfile))
         all_data = []
         month, year = 9, 2022
